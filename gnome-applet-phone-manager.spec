@@ -3,17 +3,19 @@ Summary:	Phone Manager
 Summary(pl):	Zarz±dca telefonu
 Name:		gnome-applet-%{applet}
 Version:	0.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://downloads.usefulinc.com/gnome-phone-manager/gnome-%{applet}-0.4.tar.gz
 # Source0-md5:	48856faffb8fc3d50c910c163b8e89d1
+Patch0:		%{name}-sigc++.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gob2 >= 2.0.6
 BuildRequires:	gsmlib-devel >= 1.10-2
 BuildRequires:	gnome-bluetooth-devel >= 0.5.1
+BuildRequires:	libsigc++-devel >= 2.0.5
 Requires:	bluez-utils
 Requires(post):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,6 +36,7 @@ pulpicie.
 
 %prep
 %setup -q -n gnome-%{applet}-%{version}
+%patch0 -p1
 
 %build
 rm -f missing
