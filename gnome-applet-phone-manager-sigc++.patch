@@ -1,0 +1,38 @@
+--- ./libgsm/gsm.h.orig	2004-09-10 14:43:32.946664368 +0200
++++ ./libgsm/gsm.h	2004-09-10 14:52:16.652049048 +0200
+@@ -5,6 +5,7 @@
+ #include <gsmlib/gsm_event.h>
+ #include <gsmlib/gsm_unix_serial.h>
+ 
++#include <sigc++/compatibility.h>
+ #include <sigc++/sigc++.h>
+ 
+ #include <time.h>
+--- ./libgsm/phonemgr-listener.cc.orig	2004-09-10 14:53:09.972943040 +0200
++++ ./libgsm/phonemgr-listener.cc	2004-09-10 14:54:18.398540768 +0200
+@@ -23,6 +23,8 @@
+ #include <glib-object.h>
+ #include <assert.h>
+ 
++#include <sigc++/compatibility.h>
++#include <sigc++/bind.h>
+ #include <sigc++/sigc++.h>
+ #include "phonemgr-listener.h"
+ #include "phonemgr-listener-private.h"
+--- ./configure.in.orig	2004-09-10 14:40:42.548568816 +0200
++++ ./configure.in	2004-09-10 14:41:18.211147280 +0200
+@@ -36,12 +36,12 @@
+ 
+ AM_GCONF_SOURCE_2
+ 
+-PKG_CHECK_MODULES(LIBGSM, sigc++-1.2
++PKG_CHECK_MODULES(LIBGSM, sigc++-2.0
+ 	glib-2.0 gobject-2.0)
+ AC_SUBST(LIBGSM_CFLAGS)
+ AC_SUBST(LIBGSM_LIBS)
+ 
+-PKG_CHECK_MODULES(PHONEMGR, sigc++-1.2
++PKG_CHECK_MODULES(PHONEMGR, sigc++-2.0
+ 	gtk+-2.0 glib-2.0 libgnomeui-2.0 >= 1.110.0
+ 	libgnome-2.0 gdk-pixbuf-2.0 gconf-2.0 libbtctl >= 0.4.1
+     libglade-2.0 gnome-bluetooth
