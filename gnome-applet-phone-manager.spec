@@ -13,8 +13,7 @@ URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gob2 >= 2.0.6
-BuildRequires:	gsmlib-devel >= 1.11
-BuildRequires:	libgnomeuimm-devel
+BuildRequires:	gsmlib-devel >= 1.10-2
 Requires:	bluez-utils
 Requires(post):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -65,7 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{applet}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_sysconfdir}/gconf/schemas/*
-%attr(755,root,root) %{_libdir}/phonemgr-applet
-%{_datadir}/%{applet}
-%{_libdir}/bonobo/servers/*
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/gnome-%{applet}/*
+%{_desktopdir}/*
