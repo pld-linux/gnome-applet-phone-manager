@@ -1,0 +1,75 @@
+diff -Nur phonemgr-0.2.1.orig/src/gsm.cc phonemgr-0.2.1/src/gsm.cc
+--- phonemgr-0.2.1.orig/src/gsm.cc	Sat Mar  1 21:53:43 2003
++++ phonemgr-0.2.1/src/gsm.cc	Fri Sep  5 13:54:37 2003
+@@ -260,11 +260,11 @@
+ 	} // while (1)
+ 
+   } catch (gsmlib::GsmException &ge) {
+-	cerr << ("[ERROR]: ") << ge.what() << endl;
++	std::cerr << ("[ERROR]: ") << ge.what() << std::endl;
+ 	if (ge.getErrorClass() == gsmlib::MeTaCapabilityError)
+-	  cerr << ("[ERROR]: ")
++	  std::cerr << ("[ERROR]: ")
+ 		   << ("(try setting sms_type, please refer to gsmsmsd manpage)")
+-		   << endl;
++		   << std::endl;
+ 
+ 	m_signal_status.emit(PHONELISTENER_ERROR);
+ 
+@@ -286,7 +286,7 @@
+ Glib::Thread *
+ PhoneListener::sms_loop_thread(std::string device, Glib::Dispatcher *disp)
+ {
+-  return Glib::Thread::create(SigC::bind<string,Glib::Dispatcher*>
++  return Glib::Thread::create(SigC::bind<std::string,Glib::Dispatcher*>
+ 							  (SigC::slot(*this, &PhoneListener::sms_loop),
+ 							   device, disp),
+ 							  true);
+@@ -301,7 +301,7 @@
+ }
+ 
+ void
+-EventHandler::setMessageQueue(vector<IncomingMessage> *nm)
++EventHandler::setMessageQueue(std::vector<IncomingMessage> *nm)
+ {
+   newMessages=nm;
+ }
+diff -Nur phonemgr-0.2.1.orig/src/gsm.h phonemgr-0.2.1/src/gsm.h
+--- phonemgr-0.2.1.orig/src/gsm.h	Sat Mar  1 21:30:51 2003
++++ phonemgr-0.2.1/src/gsm.h	Fri Sep  5 13:54:41 2003
+@@ -52,10 +52,10 @@
+ 
+   // extended
+   void setStoreName(std::string rs);
+-  void setMessageQueue(vector<IncomingMessage> *nm);
++  void setMessageQueue(std::vector<IncomingMessage> *nm);
+ protected:
+-  string receiveStoreName;
+-  vector<IncomingMessage> *newMessages;
++  std::string receiveStoreName;
++  std::vector<IncomingMessage> *newMessages;
+ };
+ 
+ class PhoneListener : public SigC::Object
+@@ -89,8 +89,8 @@
+   Glib::Mutex mutex;
+   bool m_terminateSent;
+   bool m_erase_mode;
+-  vector<IncomingMessage> newMessages;
+-  vector<OutgoingMessage> sendQueue;
++  std::vector<IncomingMessage> newMessages;
++  std::vector<OutgoingMessage> sendQueue;
+ 
+   // methods
+   void init();
+diff -Nur phonemgr-0.2.1.orig/src/phonemgr.cc phonemgr-0.2.1/src/phonemgr.cc
+--- phonemgr-0.2.1.orig/src/phonemgr.cc	Sun Mar  2 03:30:18 2003
++++ phonemgr-0.2.1/src/phonemgr.cc	Fri Sep  5 14:06:46 2003
+@@ -362,6 +362,6 @@
+ 									  phonemgr_applet_factory,
+ 									  NULL);
+   } catch(const Glib::Error& ex) {
+-	cout << ex.what() << endl;
++	std::cout << ex.what() << std::endl;
+   }
+ }
