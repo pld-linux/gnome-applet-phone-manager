@@ -1,13 +1,13 @@
-%define applet phonemgr
+%define applet phone-manager
 Summary:	Phone Manager
 Summary(pl):	Zarz±dca telefonu
 Name:		gnome-applet-%{applet}
-Version:	0.2.1
+Version:	0.4
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://usefulinc.com/software/phonemgr/releases/%{applet}-%{version}.tar.gz
-# Source0-md5:	b1e010178703cf70b5f81dcc05837d5b
+Source0:	http://downloads.usefulinc.com/gnome-phone-manager/gnome-%{applet}-0.4.tar.gz
+# Source0-md5:	48856faffb8fc3d50c910c163b8e89d1
 Patch0:		%{applet}-gcc.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf
@@ -34,8 +34,8 @@ Oczekuje wiadomo¶ci tekstowych, a kiedy nadejd±, wy¶wietla je na
 pulpicie.
 
 %prep
-%setup -q -n %{applet}-%{version}
-%patch0 -p1
+%setup -q -n gnome-%{applet}-%{version}
+#%patch0 -p1
 
 %build
 rm -f missing
