@@ -41,6 +41,7 @@ glib-gettextize --copy --force
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{applet} --with-gnome --all-name
