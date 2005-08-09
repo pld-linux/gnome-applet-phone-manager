@@ -3,7 +3,7 @@ Summary:	GNOME Phone Manager applet
 Summary(pl):	Zarz±dca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
 Version:	0.4
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://downloads.usefulinc.com/gnome-phone-manager/gnome-%{applet}-0.4.tar.gz
@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
+%dir %{_datadir}/gnome-%{applet}
 %{_datadir}/gnome-%{applet}/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
