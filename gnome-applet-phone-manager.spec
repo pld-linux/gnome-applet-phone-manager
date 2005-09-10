@@ -2,23 +2,23 @@
 Summary:	GNOME Phone Manager applet
 Summary(pl):	Zarz±dca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
-Version:	0.4
-Release:	4
+Version:	0.6
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://downloads.usefulinc.com/gnome-phone-manager/gnome-%{applet}-0.4.tar.gz
-# Source0-md5:	48856faffb8fc3d50c910c163b8e89d1
-Patch0:		%{name}-sigc++.patch
-Patch1:		%{name}-desktop.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/0.6/gnome-%{applet}-%{version}.tar.bz2
+# Source0-md5:	b9c0fd3cdba4a6eb92bfad823f602fe4
+Patch0:		%{name}-desktop.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-bluetooth-devel >= 0.5.1
+BuildRequires:	evolution-devel
+BuildRequires:	gnome-bluetooth-devel >= 0.6.0
 BuildRequires:	gsmlib-devel >= 1.10-2
 BuildRequires:	gtk+2-devel
-BuildRequires:	libbtctl-devel >= 0.4.1
+BuildRequires:	libbtctl-devel >= 0.5.0
+BuildRequires:	libgnokii-devel >= 0.6.4
 BuildRequires:	libgnomeui-devel
-BuildRequires:	libsigc++-devel >= 2.0.5
 BuildRequires:	openobex-devel >= 1.0.0
 Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +40,6 @@ pulpicie.
 %prep
 %setup -q -n gnome-%{applet}-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__glib_gettextize}
