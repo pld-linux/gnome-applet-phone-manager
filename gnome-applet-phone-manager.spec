@@ -10,16 +10,18 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/g
 # Source0-md5:	951471bf5d6fe93fe550c60b6bdf58f9
 Patch0:		%{name}-desktop.patch
 URL:		http://usefulinc.com/software/phonemgr/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	evolution-devel
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1:1.8
+BuildRequires:	evolution-devel >= 1.2
 BuildRequires:	gnome-bluetooth-devel >= 0.6.0
 BuildRequires:	gsmlib-devel >= 1.10-2
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
-BuildRequires:	libgnokii-devel >= 0.6.4
-BuildRequires:	libgnomeui-devel
+BuildRequires:	libgnokii-devel >= 0.6.5
+BuildRequires:	libgnomeui-devel >= 1.110.0
 BuildRequires:	openobex-devel >= 1.0.0
+BuildRequires:	pkgconfig
 Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,7 +41,7 @@ pulpicie.
 
 %prep
 %setup -q -n gnome-%{applet}-%{version}
-#%patch0 -p1
+%patch0 -p1
 
 %build
 %{__glib_gettextize}
