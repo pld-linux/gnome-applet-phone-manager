@@ -2,23 +2,24 @@
 Summary:	GNOME Phone Manager applet
 Summary(pl):	Zarz±dca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
-Version:	0.6
-Release:	2
+Version:	0.7
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/0.6/gnome-%{applet}-%{version}.tar.bz2
-# Source0-md5:	b9c0fd3cdba4a6eb92bfad823f602fe4
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/0.7/gnome-%{applet}-%{version}.tar.bz2
+# Source0-md5:	951471bf5d6fe93fe550c60b6bdf58f9
 Patch0:		%{name}-desktop.patch
 URL:		http://usefulinc.com/software/phonemgr/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	evolution-devel
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1:1.8
+BuildRequires:	evolution-devel >= 1.2
 BuildRequires:	gnome-bluetooth-devel >= 0.6.0
 BuildRequires:	gsmlib-devel >= 1.10-2
 BuildRequires:	gtk+2-devel
+BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
-BuildRequires:	libgnokii-devel >= 0.6.4
-BuildRequires:	libgnomeui-devel
+BuildRequires:	libgnokii-devel >= 0.6.5
+BuildRequires:	libgnomeui-devel >= 1.110.1
 BuildRequires:	openobex-devel >= 1.0.0
 Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,8 +59,6 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 	DESTDIR=$RPM_BUILD_ROOT
 
 install ui/cellphone.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-phone-manager.png
-
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{applet} --with-gnome --all-name
 
