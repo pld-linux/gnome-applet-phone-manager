@@ -3,7 +3,7 @@ Summary:	GNOME Phone Manager applet
 Summary(pl):	Zarz±dca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
 Version:	0.7
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
@@ -61,6 +61,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 	DESTDIR=$RPM_BUILD_ROOT
 
 install ui/cellphone.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-phone-manager.png
+install ui/cellphone.png $RPM_BUILD_ROOT%{_datadir}/gnome-%{applet}
 
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
