@@ -9,6 +9,9 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
 # Source0-md5:	951471bf5d6fe93fe550c60b6bdf58f9
 Patch0:		%{name}-desktop.patch
+Patch1:	%{name}-asneeded.patch
+Patch2:	%{name}-pixmaps.patch
+Patch3:	%{name}-photo.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -43,6 +46,9 @@ pulpicie.
 %prep
 %setup -q -n gnome-%{applet}-%{version}
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 %{__glib_gettextize}
