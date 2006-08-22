@@ -1,5 +1,6 @@
---- ui/Makefile.am.old	2005-12-27 19:37:52.000000000 +0100
-+++ ui/Makefile.am	2006-05-09 23:58:30.000000000 +0200
+diff -ur gnome-phone-manager-0.7-o/ui/Makefile.am gnome-phone-manager-0.7/ui/Makefile.am
+--- gnome-phone-manager-0.7-o/ui/Makefile.am	2005-12-27 11:37:52.000000000 -0700
++++ gnome-phone-manager-0.7/ui/Makefile.am	2006-08-21 20:02:39.000000000 -0600
 @@ -1,5 +1,5 @@
  
 -pixmapsdir = $(datadir)/pixmaps
