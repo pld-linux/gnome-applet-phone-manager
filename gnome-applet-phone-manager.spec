@@ -65,6 +65,8 @@ install ui/cellphone.png $RPM_BUILD_ROOT%{_datadir}/gnome-%{applet}
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{applet} --with-gnome --all-name
+sort -u %{applet}.lang > tmp
+mv -f tmp %{applet}.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
