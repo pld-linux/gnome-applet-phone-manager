@@ -2,16 +2,14 @@
 Summary:	GNOME Phone Manager applet
 Summary(pl):	Zarz±dca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
-Version:	0.7
-Release:	3
+Version:	0.8
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
-# Source0-md5:	951471bf5d6fe93fe550c60b6bdf58f9
+# Source0-md5:	1a645a23d8851e554b3809b71e2162f0
 Patch0:		%{name}-desktop.patch
 Patch1:	%{name}-asneeded.patch
-Patch2:	%{name}-pixmaps.patch
-Patch3:	%{name}-photo.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
@@ -28,6 +26,8 @@ BuildRequires:	openobex-devel >= 1.0.0
 BuildRequires:	pkgconfig
 Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define            filterout_ld    -Wl,--as-needed
 
 %description
 This applet will connect to your mobile phone over a serial port,
@@ -47,8 +47,6 @@ pulpicie.
 %setup -q -n gnome-%{applet}-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 %build
 %{__glib_gettextize}
