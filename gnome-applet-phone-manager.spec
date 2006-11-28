@@ -19,7 +19,7 @@ BuildRequires:	gsmlib-devel >= 1.10-2
 BuildRequires:	gtk+2-devel >= 2.0
 BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
-BuildRequires:	librsvg-devel
+BuildRequires:	librsvg-devel >= 1:2.0
 BuildRequires:	libgnokii-devel >= 0.6.5
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	openobex-devel >= 1.0.0
