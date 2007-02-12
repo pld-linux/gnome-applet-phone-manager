@@ -1,6 +1,6 @@
 %define		applet phone-manager
 Summary:	GNOME Phone Manager applet
-Summary(pl):	Zarz±dca telefonu - aplet GNOME
+Summary(pl.UTF-8):   ZarzÄ…dca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
 Version:	0.8
 Release:	1
@@ -36,11 +36,11 @@ either via a cable, infra-red or Bluetooth connection.
 It listens for text messages, and when they arrive, displays them on
 the desktop.
 
-%description -l pl
-Ten aplet ³±czy siê z telefonem komórkowym przez port szeregowy przy
-pomoc± kabelka, podczerwieni lub po³±czenia Bluetooth.
+%description -l pl.UTF-8
+Ten aplet Å‚Ä…czy siÄ™ z telefonem komÃ³rkowym przez port szeregowy przy
+pomocÄ… kabelka, podczerwieni lub poÅ‚Ä…czenia Bluetooth.
 
-Oczekuje wiadomo¶ci tekstowych, a kiedy nadejd±, wy¶wietla je na
+Oczekuje wiadomoÅ›ci tekstowych, a kiedy nadejdÄ…, wyÅ›wietla je na
 pulpicie.
 
 %prep
