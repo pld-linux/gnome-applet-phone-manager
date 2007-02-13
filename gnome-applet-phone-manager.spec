@@ -1,6 +1,6 @@
 %define		applet phone-manager
 Summary:	GNOME Phone Manager applet
-Summary(pl.UTF-8):   Zarządca telefonu - aplet GNOME
+Summary(pl.UTF-8):	Zarządca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
 Version:	0.8
 Release:	1
