@@ -2,21 +2,21 @@
 Summary:	GNOME Phone Manager applet
 Summary(pl.UTF-8):	Zarządca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
-Version:	0.10
+Version:	0.20
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
-# Source0-md5:	1673f4f1172cd12ce997d42b71e49b79
+# Source0-md5:	992507f1f1122ec0017b7d7955f93538
 Patch0:		%{name}-desktop.patch
-#Patch1:	%{name}-asneeded.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	evolution-devel >= 2.6.1
-BuildRequires:	gnome-bluetooth-devel >= 0.7.0
+BuildRequires:	gnome-bluetooth-devel > 0.8.0
 BuildRequires:	gsmlib-devel >= 1.10-2
-BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	gstreamer-devel >= 0.10
+BuildRequires:	gtk+2-devel >= 2.10
 BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
 BuildRequires:	librsvg-devel >= 1:2.0
@@ -27,8 +27,8 @@ BuildRequires:	pkgconfig
 Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define            filterout_ld    -Wl,--as-needed
-
+%define		filterout_ld	-Wl,--as-needed
+%define		_sysconfdir	/etc/gconf
 %description
 This applet will connect to your mobile phone over a serial port,
 either via a cable, infra-red or Bluetooth connection.
@@ -46,7 +46,6 @@ pulpicie.
 %prep
 %setup -q -n gnome-%{applet}-%{version}
 %patch0 -p1
-#%patch1 -p1
 
 %build
 %{__glib_gettextize}
@@ -54,7 +53,8 @@ pulpicie.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-schemas-install
 %{__make}
 
 %install
@@ -64,21 +64,21 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install ui/cellphone.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-phone-manager.png
-install ui/cellphone.png $RPM_BUILD_ROOT%{_datadir}/gnome-%{applet}
-
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
-
-%find_lang %{applet} --with-gnome --all-name
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{applet}.lang
+%post
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun -p /usr/bin/scrollkeeper-update
+
+%files
+# -f %{applet}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%{_sysconfdir}/schemas/gnome-phone-manager.schemas
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/gnome-%{applet}
 %{_datadir}/gnome-%{applet}/*
 %{_desktopdir}/*.desktop
-%{_pixmapsdir}/*.png
