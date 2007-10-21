@@ -16,7 +16,7 @@ BuildRequires:	evolution-devel >= 2.6.1
 BuildRequires:	gnome-bluetooth-devel > 0.8.0
 BuildRequires:	gsmlib-devel >= 1.10-2
 BuildRequires:	gstreamer-devel >= 0.10
-BuildRequires:	gtk+2-devel >= 2.10
+BuildRequires:	gtk+2-devel >= 2:2.10
 BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
 BuildRequires:	librsvg-devel >= 1:2.0
@@ -29,6 +29,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		filterout_ld	-Wl,--as-needed
 %define		_sysconfdir	/etc/gconf
+
 %description
 This applet will connect to your mobile phone over a serial port,
 either via a cable, infra-red or Bluetooth connection.
@@ -59,7 +60,6 @@ pulpicie.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
