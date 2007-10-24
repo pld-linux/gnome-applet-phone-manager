@@ -14,7 +14,6 @@ BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	evolution-devel >= 2.6.1
 BuildRequires:	gnome-bluetooth-devel > 0.8.0
-BuildRequires:	gsmlib-devel >= 1.10-2
 BuildRequires:	gstreamer-devel >= 0.10
 BuildRequires:	gtk+2-devel >= 2:2.10
 BuildRequires:	intltool >= 0.18
@@ -28,7 +27,6 @@ Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		filterout_ld	-Wl,--as-needed
-%define		_sysconfdir	/etc/gconf
 
 %description
 This applet will connect to your mobile phone over a serial port,
@@ -77,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 # -f %{applet}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%{_sysconfdir}/schemas/gnome-phone-manager.schemas
+%{_sysconfdir}/gconf/schemas/gnome-phone-manager.schemas
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/gnome-%{applet}
 %{_datadir}/gnome-%{applet}/*
