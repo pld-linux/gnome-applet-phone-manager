@@ -1,14 +1,11 @@
 --- gnome-phone-manager-0.7/src/gnome-phone-manager.desktop.in.orig	2005-11-19 21:59:46.000000000 +0100
 +++ gnome-phone-manager-0.7/src/gnome-phone-manager.desktop.in	2006-05-11 08:31:36.729006500 +0200
 @@ -4,9 +4,9 @@
- _Comment=Receive and send text messages from your mobile phone
- Icon=cellphone
  Exec=gnome-phone-manager
--Terminal=0
-+Terminal=false
+ Terminal=false
  Type=Application
--Categories=Application;System;Telephony;
+-Categories=System;Telephony;
 +Categories=GTK;GNOME;Office;PDA;
  X-GNOME-Bugzilla-Bugzilla=GNOME
- X-GNOME-Bugzilla-Product=phonemgr
- X-GNOME-Bugzilla-Component=phonemgr
+ X-GNOME-Bugzilla-Product=gnome-phone-manager
+ X-GNOME-Bugzilla-Component=general
