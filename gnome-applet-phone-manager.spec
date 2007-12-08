@@ -2,12 +2,12 @@
 Summary:	GNOME Phone Manager applet
 Summary(pl.UTF-8):	Zarządca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
-Version:	0.20
+Version:	0.40
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
-# Source0-md5:	992507f1f1122ec0017b7d7955f93538
+# Source0-md5:	38537c212e9b2395cf89187ab2be3b9a
 Patch0:		%{name}-desktop.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf >= 2.52
