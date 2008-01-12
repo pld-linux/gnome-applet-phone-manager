@@ -26,8 +26,6 @@ BuildRequires:	pkgconfig
 Requires:	bluez-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		filterout_ld	-Wl,--as-needed
-
 %description
 This applet will connect to your mobile phone over a serial port,
 either via a cable, infra-red or Bluetooth connection.
