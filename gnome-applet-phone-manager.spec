@@ -76,6 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/gnome-phone-manager.schemas
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/gnome-%{applet}
-%{_mandir}/man1/*gz
 %{_datadir}/gnome-%{applet}/*
+%{_mandir}/man1/*.1*
 %{_desktopdir}/*.desktop
