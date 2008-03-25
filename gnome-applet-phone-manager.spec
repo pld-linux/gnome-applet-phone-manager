@@ -19,7 +19,7 @@ BuildRequires:	gtk+2-devel >= 2:2.10
 BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
 BuildRequires:	librsvg-devel >= 1:2.0
-BuildRequires:	libgnokii-devel >= 0.6.22
+BuildRequires:	libgnokii-devel >= 1:0.6.22
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	openobex-devel >= 1.0.0
 BuildRequires:	pkgconfig
