@@ -2,12 +2,12 @@
 Summary:	GNOME Phone Manager applet
 Summary(pl.UTF-8):	Zarządca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
-Version:	0.50
+Version:	0.51
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
-# Source0-md5:	dbafdfb467f8ac82dc48aa6770797f2a
+# Source0-md5:	e40ab97868e2386d3db45d137b6f6207
 Patch0:		%{name}-desktop.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf >= 2.52
@@ -16,10 +16,11 @@ BuildRequires:	evolution-devel >= 2.6.1
 BuildRequires:	gnome-bluetooth-devel > 0.8.0
 BuildRequires:	gstreamer-devel >= 0.10
 BuildRequires:	gtk+2-devel >= 2:2.10
+BuildRequires:	gtkspell-devel >= 2.0
 BuildRequires:	intltool >= 0.18
 BuildRequires:	libbtctl-devel >= 0.5.0
 BuildRequires:	librsvg-devel >= 1:2.0
-BuildRequires:	libgnokii-devel >= 1:0.6.22
+BuildRequires:	libgnokii-devel >= 1:0.6.24
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	openobex-devel >= 1.0.0
 BuildRequires:	pkgconfig
