@@ -3,7 +3,7 @@ Summary:	GNOME Phone Manager applet
 Summary(pl.UTF-8):	Zarządca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
 Version:	0.51
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
@@ -22,6 +22,7 @@ BuildRequires:	libbtctl-devel >= 0.5.0
 BuildRequires:	librsvg-devel >= 1:2.0
 BuildRequires:	libgnokii-devel >= 1:0.6.24
 BuildRequires:	libgnomeui-devel >= 2.14.0
+BuildRequires:	libtelepathy-devel >= 0.3.1
 BuildRequires:	openobex-devel >= 1.0.0
 BuildRequires:	pkgconfig
 Requires:	bluez-utils
@@ -80,3 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-%{applet}/*
 %{_mandir}/man1/*.1*
 %{_desktopdir}/*.desktop
+%{_libdir}/telepathy-phoney
+%{_datadir}/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.phoney.service
+%{_datadir}/telepathy/managers/phoney.manager
