@@ -12,6 +12,7 @@ Patch0:		%{name}-desktop.patch
 URL:		http://usefulinc.com/software/phonemgr/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.8
+BuildRequires:	bluez-libs-devel >= 3.12
 BuildRequires:	evolution-devel >= 2.6.1
 BuildRequires:	gnome-bluetooth-devel > 0.8.0
 BuildRequires:	gstreamer-devel >= 0.10
@@ -23,6 +24,7 @@ BuildRequires:	librsvg-devel >= 1:2.0
 BuildRequires:	libgnokii-devel >= 1:0.6.26
 BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	libtelepathy-devel >= 0.3.1
+BuildRequires:	libtool
 BuildRequires:	openobex-devel >= 1.0.0
 BuildRequires:	pkgconfig
 Requires:	bluez-utils
