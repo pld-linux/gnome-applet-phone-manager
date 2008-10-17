@@ -50,6 +50,7 @@ pulpicie.
 
 %build
 %{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
