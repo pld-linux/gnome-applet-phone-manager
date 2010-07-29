@@ -1,0 +1,13 @@
+diff -urN gnome-phone-manager-0.65/cut-n-paste/e-contact-entry/Makefile.am gnome-phone-manager-0.65.new//cut-n-paste/e-contact-entry/Makefile.am
+--- gnome-phone-manager-0.65/cut-n-paste/e-contact-entry/Makefile.am	2009-03-10 16:05:24.000000000 +0100
++++ gnome-phone-manager-0.65.new//cut-n-paste/e-contact-entry/Makefile.am	2010-07-30 00:27:40.202849123 +0200
+@@ -8,6 +8,9 @@
+ 	e-contact-entry.h	\
+ 	econtactentry-marshal.c
+ 
++libecontact_entry_la_LIBADD =	\
++	$(PHONEMGR_LIBS)
++
+ MARSHALFILES = econtactentry-marshal.c econtactentry-marshal.h
+ BUILT_SOURCES = $(MARSHALFILES)
+ econtactentry-marshal.c: econtactentry-marshal.h
