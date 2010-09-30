@@ -3,7 +3,7 @@ Summary:	GNOME Phone Manager applet
 Summary(pl.UTF-8):	Zarządca telefonu - aplet GNOME
 Name:		gnome-applet-%{applet}
 Version:	0.65
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-phone-manager/%{version}/gnome-%{applet}-%{version}.tar.bz2
