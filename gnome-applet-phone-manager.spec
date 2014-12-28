@@ -17,7 +17,7 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	bluez-libs-devel >= 3.12
 BuildRequires:	dbus-glib-devel
 BuildRequires:	evolution-data-server-devel >= 2.20.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-bluetooth-devel >= 2.28.0
 BuildRequires:	gnome-common
 BuildRequires:	gnome-icon-theme >= 2.20.0
